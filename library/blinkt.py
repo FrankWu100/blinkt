@@ -1,12 +1,15 @@
 import atexit
 
-import RPi.GPIO as GPIO
+try:
+    import ASUS.GPIO as GPIO
+except:
+    import RPi.GPIO as GPIO
 
 
 __version__ = '0.1.1'
 
-DAT = 23
-CLK = 24
+DAT = 16
+CLK = 18
 NUM_PIXELS = 8
 BRIGHTNESS = 7
 
@@ -64,7 +67,7 @@ def show():
     global _gpio_setup
 
     if not _gpio_setup:
-        GPIO.setmode(GPIO.BCM)
+        GPIO.setmode(GPIO.BOARD)
         GPIO.setwarnings(False)
         GPIO.setup(DAT, GPIO.OUT)
         GPIO.setup(CLK, GPIO.OUT)
