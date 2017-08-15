@@ -49,5 +49,5 @@ setup(
     url             = 'http://www.pimoroni.com',
     classifiers     = classifiers,
     py_modules      = ['blinkt'],
-    install_requires= [ 'RPi.GPIO' ]
+    #install_requires= [ 'RPi.GPIO' ]
 )
